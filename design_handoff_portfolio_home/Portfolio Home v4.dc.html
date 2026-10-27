@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<style>html{scroll-behavior:auto}body{margin:0;background:#fff}a{color:#367C83}a:hover{color:#182C31}*{box-sizing:border-box}</style>
+</helmet>
+<div style="background:#fff;color:#182C31;font-family:'Satoshi',sans-serif;overflow-x:clip">
+
+<div data-curtain style="position:fixed;left:0;right:0;top:0;height:128vh;z-index:100;background:#182C31;border-radius:0 0 50% 50% / 0 0 30vh 30vh;display:flex;justify-content:center;padding-top:44vh;color:#fff;font:500 12px 'Satoshi';letter-spacing:.18em;text-transform:uppercase;pointer-events:none"><span>Digital Content &amp; Marketing Specialist</span></div>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:calc(3vh + 6px) 3vw 0 calc(3vw + clamp(44px,4.4vw,60px) + 20px);color:#182C31;font:500 11px 'Satoshi';letter-spacing:.14em;text-transform:uppercase;pointer-events:none">
+  <nav style="display:flex;gap:10px;pointer-events:auto"><a href="#work" style="color:inherit;text-decoration:none">Work</a><span>|</span><a href="#services" style="color:inherit;text-decoration:none">Services</a><span>|</span><a href="#about" style="color:inherit;text-decoration:none">About</a></nav>
+  <a href="#contact" style="display:flex;gap:14px;align-items:center;color:inherit;text-decoration:none;pointer-events:auto">Contact<span style="display:grid;gap:4px"><i style="display:block;width:22px;height:1.5px;background:#182C31"></i><i style="display:block;width:22px;height:1.5px;background:#182C31"></i><i style="display:block;width:22px;height:1.5px;background:#182C31"></i></span></a>
+</header>
+
+<section id="top" data-hero style="height:330vh;position:relative">
+ <div data-stage style="position:sticky;top:0;height:100vh;overflow:hidden;background:#fff">
+
+  <div data-thumb style="position:absolute;left:3vw;top:3vh;width:clamp(44px,4.4vw,60px);aspect-ratio:7/8;background:repeating-linear-gradient(135deg,#182C31 0 5px,#244249 5px 10px);z-index:3"></div>
+
+  <h1 data-hl style="position:absolute;left:3vw;top:15vh;margin:0;width:min(30vw,460px);min-width:240px;font:500 clamp(24px,2.6vw,42px)/1.08 'Clash Display';letter-spacing:-.015em">
+    <span style="display:block;overflow:hidden"><span data-hline style="display:block">I create content</span></span>
+    <span style="display:block;overflow:hidden"><span data-hline style="display:block">that connects brands</span></span>
+    <span style="display:block;overflow:hidden"><span data-hline style="display:block">with their audience.</span></span>
+  </h1>
+
+  <div data-panel style="position:absolute;left:35vw;top:12vh;width:max(26vw,180px);height:62vh;z-index:2;overflow:hidden;background:repeating-linear-gradient(135deg,#EAF0ED 0 10px,#dfe8e4 10px 20px)">
+    <span data-plabel style="position:absolute;left:14px;top:12px;font:500 10px 'Satoshi';letter-spacing:.14em;text-transform:uppercase;color:#4d6166">Hero showreel · drop video</span>
+    <div data-pover style="position:absolute;inset:0;opacity:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(70px,12vh,110px) 3vw 4vh;color:#182C31">
+      <div style="display:flex;justify-content:space-between;font:500 12px 'Satoshi';letter-spacing:.14em;text-transform:uppercase"><span>01 — Featured</span><span>Social Media &amp; Strategy</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px"><span style="font:600 clamp(52px,11vw,190px)/.85 'Clash Display';letter-spacing:-.03em">Project<br>One</span><span style="font:500 11px 'Satoshi';letter-spacing:.14em;text-transform:uppercase;color:#4d6166;text-align:right">Placeholder<br>Replace in project data</span></div>
+    </div>
+  </div>
+
+  <a data-badge href="#work" style="position:absolute;left:calc(35vw + max(26vw,180px) + 3vw);top:19vh;z-index:3;width:78px;height:78px;display:block;color:#182C31;text-decoration:none">
+    <svg viewBox="0 0 100 100" width="78" height="78" data-spin style="position:absolute;inset:0"><defs><path id="bc" d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0"></path></defs><circle cx="50" cy="50" r="49" fill="#D8E69A" stroke="#182C31" stroke-width="1"></circle><text font-family="Satoshi" font-size="10" letter-spacing="2.4" fill="#182C31" font-weight="700"><textPath href="#bc" textLength="215" lengthAdjust="spacing">VIEW MY WORK · VIEW MY WORK · </textPath></text></svg>
+  </a>
+
+  <div data-side style="position:absolute;right:3vw;top:15vh;width:min(24vw,330px);min-width:230px;z-index:3">
+    <p style="margin:0 0 20px;font:400 clamp(13px,1vw,15px)/1.6 'Satoshi';color:#3d5257">I help brands build meaningful connections through content strategy, social media management, video editing, influencer marketing, and creative digital campaigns.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a data-mag href="#work" style="display:inline-block;padding:13px 22px;background:#367C83;color:#fff;text-decoration:none;font:700 13px 'Satoshi';border-radius:99px" style-hover="background:#2b666c">View My Work</a>
+      <a data-mag href="#contact" style="display:inline-block;padding:12px 21px;border:1px solid #182C31;color:#182C31;text-decoration:none;font:700 13px 'Satoshi';border-radius:99px" style-hover="background:#f0eeea">Get In Touch</a>
+    </div>
+  </div>
+
+  <div data-small style="position:absolute;right:5vw;bottom:calc(31vh + min(16vw,32vh)*.1 + 44px);width:clamp(46px,5.6vw,92px);aspect-ratio:4/5;z-index:2;background:repeating-linear-gradient(45deg,#D8E69A 0 6px,#cbd98b 6px 12px)"></div>
+
+  <div data-labels style="position:absolute;left:3vw;right:3vw;bottom:calc(31vh + min(16vw,32vh)*.1 + 14px);z-index:3;display:flex;justify-content:space-between;font:500 11px 'Satoshi';letter-spacing:.1em;color:#182C31"><span>Plan</span><span style="margin-left:18vw">Create</span><span>Publish</span></div>
+
+  <div data-word aria-label="Content" style="position:absolute;left:3vw;bottom:calc(31vh - min(16vw,32vh)*.7);z-index:4;font:500 min(16vw,32vh)/.8 'Clash Display';letter-spacing:.015em;white-space:nowrap;display:flex;color:#182C31">
+    <sc-for list="{{ letters }}" as="ch" hint-placeholder-count="7"><span aria-hidden="true" style="display:block;overflow:hidden;padding:.05em 0 .02em"><span data-l style="display:block">{{ ch }}</span></span></sc-for>
+  </div>
+ </div>
+</section>
+
+<div id="work" data-wr style="position:relative;z-index:2;margin-top:-100vh">
+ <div data-sheet style="background:#fff;color:#182C31;border-radius:50% 50% 0 0 / 16vh 16vh 0 0;padding:22vh 3vw 16vh">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:9vh">
+    <div data-whead><h2 aria-label="More selected work" style="margin:0;font:600 clamp(48px,9vw,150px)/.88 'Clash Display';letter-spacing:-.03em"><span data-wl style="display:block" data-dir="-1">More selected</span><span data-wl style="display:block;color:#367C83" data-dir="1">work</span></h2><div data-wbar style="height:3px;margin-top:22px;background:#367C83;transform-origin:left;transform:scaleX(0)"></div></div>
+    <p style="margin:0;max-width:300px;font-size:14px;line-height:1.6;color:#4d6166">Placeholders are labelled — swap them for real projects in the project data file.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(36px,6vw,90px) 2vw">
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+      <article data-card style="grid-column:{{ p.col }};margin-top:{{ p.offset }}">
+        <div data-cimg style="position:relative;overflow:hidden;aspect-ratio:{{ p.ratio }};background:#EAF0ED">
+          <div data-zoom style="position:absolute;inset:-7%;background:repeating-linear-gradient(135deg,{{ p.c1 }} 0 12px,{{ p.c2 }} 12px 24px);transition:transform .9s cubic-bezier(.16,1,.3,1)"></div>
+          <div style="position:absolute;left:16px;bottom:14px;font:500 10px 'Satoshi';letter-spacing:.14em;text-transform:uppercase;color:#4d6166">{{ p.media }}</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid #cfdcd8">
+          <h3 style="margin:0;font:500 clamp(24px,2.4vw,38px)/1.05 'Clash Display';letter-spacing:-.01em">{{ p.title }}</h3>
+          <span style="font:500 11px 'Satoshi';letter-spacing:.12em;text-transform:uppercase;color:#4d6166;text-align:right">{{ p.cat }}</span>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+ </div>
+</div>
+
+<div style="background:#182C31;margin-top:-1px;position:relative;z-index:3">
+ <section id="services" data-sheet style="background:#fff;border-radius:50% 50% 0 0 / 16vh 16vh 0 0;padding:20vh 3vw 14vh">
+  <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-end;margin-bottom:8vh">
+    <h2 data-split style="margin:0;font:600 clamp(48px,9vw,150px)/.88 'Clash Display';letter-spacing:-.03em">Expertise</h2>
+    <span style="font:500 12px 'Satoshi';letter-spacing:.14em;text-transform:uppercase;color:#4d6166">Five ways I help brands</span>
+  </div>
+  <div data-sgrid style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(20px,5vw,90px);align-items:start">
+    <div data-swrap style="position:sticky;top:max(72px,10vh);z-index:2">
+      <div data-spanel style="position:relative;height:clamp(230px,46vw,72vh);overflow:hidden;background:#EAF0ED">
+        <div data-scene style="position:absolute;inset:0;background:#EAF0ED;display:flex;align-items:center;justify-content:center">
+          <div style="width:68%;display:grid;grid-template-columns:repeat(7,1fr);gap:clamp(4px,.7vw,10px)"><sc-for list="{{ cells }}" as="c" hint-placeholder-count="28"><div data-el style="aspect-ratio:1;background:{{ c }}"></div></sc-for></div>
+        </div>
+        <div data-scene style="position:absolute;inset:0;background:#182C31;display:flex;align-items:center;justify-content:center;clip-path:circle(0% at 50% 50%)">
+          <div style="position:relative;width:34%;aspect-ratio:3/4"><div data-el style="position:absolute;inset:0;background:#fff"></div><div data-el style="position:absolute;inset:0;background:#D8E69A"></div><div data-el style="position:absolute;inset:0;background:#367C83"></div></div>
+        </div>
+        <div data-scene style="position:absolute;inset:0;background:#367C83;display:flex;align-items:center;justify-content:center;clip-path:circle(0% at 50% 50%)">
+          <div data-el style="width:30%;aspect-ratio:1;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center"><div style="width:0;height:0;margin-left:8%;border-style:solid;border-width:clamp(10px,2.2vw,30px) 0 clamp(10px,2.2vw,30px) clamp(16px,3.6vw,50px);border-color:transparent transparent transparent #182C31"></div></div>
+          <div style="position:absolute;left:12%;right:12%;bottom:12%;height:4px;background:rgba(255,255,255,.35)"><div data-fill style="height:100%;background:#fff;transform-origin:left"></div></div>
+        </div>
+        <div data-scene style="position:absolute;inset:0;background:#D8E69A;display:flex;align-items:center;justify-content:center;clip-path:circle(0% at 50% 50%)">
+          <div style="position:relative;width:76%;aspect-ratio:1">
+            <div data-ring style="position:absolute;inset:0;border:2px solid #182C31;border-radius:50%"><i style="position:absolute;left:50%;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#367C83"></i></div>
+            <div data-ring style="position:absolute;inset:20%;border:2px solid #182C31;border-radius:50%"><i style="position:absolute;left:50%;bottom:0;width:14px;height:14px;margin:0 0 -7px -7px;border-radius:50%;background:#182C31"></i></div>
+            <div data-ring style="position:absolute;inset:40%;border:2px solid #182C31;border-radius:50%"><i style="position:absolute;left:0;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#367C83"></i></div>
+          </div>
+        </div>
+        <div data-scene style="position:absolute;inset:0;background:#dfe8e4;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14%;clip-path:circle(0% at 50% 50%)">
+          <div style="width:64%;height:56%;display:flex;gap:4%;align-items:flex-end"><div data-bar style="flex:1;height:30%;background:#367C83;transform-origin:bottom"></div><div data-bar style="flex:1;height:48%;background:#367C83;transform-origin:bottom"></div><div data-bar style="flex:1;height:40%;background:#367C83;transform-origin:bottom"></div><div data-bar style="flex:1;height:72%;background:#367C83;transform-origin:bottom"></div><div data-bar style="flex:1;height:100%;background:#182C31;transform-origin:bottom"></div></div>
+        </div>
+        <div style="position:absolute;left:16px;top:16px;z-index:5;display:flex;align-items:center;gap:8px;padding:8px 14px;background:#fff;color:#182C31;font:600 14px 'Clash Display';letter-spacing:.04em"><div style="height:1.2em;overflow:hidden;line-height:1.2"><div data-cnt><div>01</div><div>02</div><div>03</div><div>04</div><div>05</div></div></div><span style="color:#4d6166">/ 05</span></div>
+      </div>
+    </div>
+    <div data-slist style="position:relative;padding-left:28px">
+      <div style="position:absolute;left:0;top:0;bottom:0;width:2px;background:#EAF0ED"></div>
+      <div data-pfill style="position:absolute;left:0;top:0;bottom:0;width:2px;background:#367C83;transform-origin:top;transform:scaleY(0)"></div>
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+        <div data-row data-sblock style="min-height:57vh;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:5vh 0">
+          <span style="font:500 12px 'Satoshi';letter-spacing:.14em;color:#367C83">{{ s.n }}</span>
+          <div data-sname style="font:600 clamp(32px,4.6vw,76px)/.98 'Clash Display';letter-spacing:-.025em;color:#bccac7">{{ s.name }}</div>
+          <p data-sdesc style="margin:0;max-width:480px;font-size:16px;line-height:1.6;color:#3d5257;opacity:.45">{{ s.desc }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ s.tags }}" as="t" hint-placeholder-count="3"><span style="padding:7px 14px;border:1px solid #cfdcd8;border-radius:99px;font:500 12px 'Satoshi';color:#182C31" style-hover="background:#367C83;color:#fff;border-color:#367C83">{{ t }}</span></sc-for></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+ </section>
+</div>
+
+<div style="background:#182C31;margin-top:-1px;position:relative;z-index:4">
+ <section id="about" data-sheet style="background:#fff;color:#182C31;border-radius:50% 50% 0 0 / 16vh 16vh 0 0;padding:22vh 3vw 16vh">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,6vw,110px);align-items:start">
+    <div data-aport style="aspect-ratio:4/5;max-width:520px;width:100%;background:repeating-linear-gradient(135deg,#EAF0ED 0 12px,#dfe8e4 12px 24px);clip-path:circle(0% at 50% 50%);display:flex;align-items:flex-end;padding:18px;font:500 10px 'Satoshi';letter-spacing:.14em;text-transform:uppercase;color:#4d6166">Portrait · drop photo</div>
+    <div>
+      <span style="font:500 12px 'Satoshi';letter-spacing:.14em;text-transform:uppercase;color:#4d6166">About</span>
+      <p data-split style="margin:18px 0 44px;font:500 clamp(30px,4vw,64px)/1.06 'Clash Display';letter-spacing:-.02em">Strategy first, craft always. I turn brand goals into content people stop for — planned, produced and published end to end.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:28px;border-top:1px solid #cfdcd8;padding-top:28px">
+        <div><h4 style="margin:0 0 10px;font:700 12px 'Satoshi';letter-spacing:.14em;text-transform:uppercase">Approach</h4><p style="margin:0;font-size:14px;line-height:1.7;color:#4d6166">Understand the brand goal, plan the content, execute and refine.</p></div>
+        <div><h4 style="margin:0 0 10px;font:700 12px 'Satoshi';letter-spacing:.14em;text-transform:uppercase">Core</h4><p style="margin:0;font-size:14px;line-height:1.7;color:#4d6166">Social media, content production, video editing, influencer campaigns, marketing support.</p></div>
+        <div><h4 style="margin:0 0 10px;font:700 12px 'Satoshi';letter-spacing:.14em;text-transform:uppercase">Also strong in</h4><p style="margin:0;font-size:14px;line-height:1.7;color:#4d6166">Sales support, customer engagement, administrative operations.</p></div>
+      </div>
+      <a data-mag href="#about" style="display:inline-block;margin-top:40px;padding:13px 24px;border:1px solid #367C83;border-radius:99px;color:#367C83;text-decoration:none;font:700 13px 'Satoshi'" style-hover="background:#EAF0ED">More about me →</a>
+    </div>
+  </div>
+ </section>
+</div>
+
+<div style="background:#182C31;margin-top:-1px;position:relative;z-index:5">
+ <section id="contact" data-sheet style="background:#fff;border-radius:50% 50% 0 0 / 16vh 16vh 0 0;min-height:100vh;padding:20vh 3vw 3vh;position:relative;overflow:hidden">
+  <h2 data-split style="margin:0;width:min(34vw,520px);min-width:260px;font:500 clamp(24px,2.6vw,42px)/1.08 'Clash Display';letter-spacing:-.015em">Have a brand to grow? Let's make content people remember.</h2>
+  <a data-mag data-cta href="#contact" style="position:absolute;left:36vw;top:22vh;width:clamp(110px,11vw,170px);aspect-ratio:1;border-radius:50%;background:#367C83;color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;font:700 14px 'Satoshi';z-index:3">Get in touch</a>
+  <div style="position:absolute;right:3vw;top:20vh;width:min(24vw,330px);min-width:220px;display:grid;gap:14px;font:500 12px 'Satoshi';letter-spacing:.1em;text-transform:uppercase;color:#3d5257"><span>Email — add in site config</span><span>LinkedIn — add in site config</span><span>Location — add in site config</span></div>
+  <div style="position:absolute;left:3vw;right:3vw;bottom:calc(3vh + min(16vw,32vh)*.8 + 14px);display:flex;justify-content:space-between;font:500 11px 'Satoshi';letter-spacing:.1em"><span>Strategy</span><span style="margin-left:18vw">Content</span><span>Results</span></div>
+  <div aria-label="Connect" style="position:absolute;left:3vw;bottom:3vh;display:flex;font:600 min(16vw,32vh)/.8 'Clash Display';letter-spacing:.015em;white-space:nowrap">
+    <sc-for list="{{ cletters }}" as="ch" hint-placeholder-count="7"><span aria-hidden="true" style="display:block;overflow:hidden;padding:.05em 0 .02em"><span data-cl style="display:block">{{ ch }}</span></span></sc-for>
+  </div>
+ </section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;wordmark&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;CONTENT&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      letters: (this.props.wordmark || 'CONTENT').toUpperCase().split(''),
+      cletters: 'CONNECT'.split(''),
+      projects: [
+        { title: 'Project Two', cat: 'Video & Production', media: 'Placeholder · video', ratio: '4/5', col: 'span 5', offset: '0', c1: '#EAF0ED', c2: '#dfe8e4' },
+        { title: 'Project Three', cat: 'Influencer Marketing', media: 'Placeholder · gallery', ratio: '16/11', col: '7 / span 6', offset: '14vh', c1: '#e2ebe7', c2: '#d6e2dd' },
+        { title: 'Project Four', cat: 'Marketing & Campaigns', media: 'Placeholder · campaign visual', ratio: '16/10', col: '2 / span 8', offset: '0', c1: '#D8E69A', c2: '#cbd98b' }
+      ],
+      cells: Array.from({ length: 28 }, (_, k) => [3,9,10,16,22,25].includes(k) ? '#367C83' : [5,13,20].includes(k) ? '#182C31' : k === 17 ? '#D8E69A' : '#fff'),
+      services: [
+        { n: '01', name: 'Social Media Management', desc: 'Content calendars, community care and consistent publishing across channels.', tags: ['Content calendars', 'Community', 'Publishing'] },
+        { n: '02', name: 'Content Creation & Planning', desc: 'Strategy-led concepts, graphics and copy built around brand goals.', tags: ['Strategy', 'Graphics', 'Copy'] },
+        { n: '03', name: 'Video Editing & Production', desc: 'Short-form, YouTube and educational video, from cut to caption.', tags: ['Short-form', 'YouTube', 'Educational'] },
+        { n: '04', name: 'Influencer Marketing', desc: 'Outreach, collaborations and campaign coordination with the right voices.', tags: ['Outreach', 'Collaborations', 'Coordination'] },
+        { n: '05', name: 'Digital Marketing Support', desc: 'Campaign assets, lead-generation support and daily marketing operations.', tags: ['Campaign assets', 'Lead generation', 'Operations'] }
+      ]
+    };
+  }
+  componentDidMount() {
+    const go = () => (window.gsap && window.ScrollTrigger && window.Lenis) ? this.init() : (this._t = setTimeout(go, 40));
+    go();
+  }
+  componentWillUnmount() { clearTimeout(this._t); this.ctx && this.ctx.revert(); this.lenis && this.lenis.destroy(); }
+  init() {
+    const gsap = window.gsap, ST = window.ScrollTrigger; gsap.registerPlugin(ST);
+    const q = s => gsap.utils.toArray(document.querySelectorAll(s));
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mobile = innerWidth < 760, E = 'expo.out';
+    if (!reduce) {
+      this.lenis = new Lenis({ lerp: 0.12 });
+      this.lenis.on('scroll', ST.update);
+      gsap.ticker.add(t => this.lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+    }
+    this.ctx = gsap.context(() => {
+      if (mobile) {
+        gsap.set('[data-hl]', { width: '88vw', top: '11vh', fontSize: 26 });
+        gsap.set('[data-panel]', { left: '24vw', top: '30vh', width: '52vw', height: '30vh' });
+        gsap.set('[data-side]', { right: '3vw', left: '3vw', width: 'auto', top: 'auto', bottom: 'calc(3vh + 16vw*.8 + 56px)' });
+        gsap.set(['[data-badge]', '[data-small]'], { display: 'none' });
+      }
+      if (innerHeight < 700) q('[data-small]').forEach(e => e.style.display = 'none');
+      const l = q('[data-l]');
+      if (reduce) gsap.set('[data-curtain]', { display: 'none' });
+      else {
+        gsap.set(l, { yPercent: 70, opacity: 0, color: '#b7c7c4' });
+        gsap.set('[data-hline]', { yPercent: 110 });
+        gsap.set('[data-panel]', { opacity: 0, filter: 'blur(16px)' });
+        gsap.set(['[data-thumb]', '[data-badge]'], { scale: 0 });
+        gsap.set('[data-small]', { opacity: 0, filter: 'blur(14px)' });
+        gsap.set(['[data-side]', '[data-labels]'], { opacity: 0, y: 20 });
+        gsap.timeline({ delay: 0.35 })
+          .to('[data-curtain]', { yPercent: -112, duration: 1.5, ease: 'power3.inOut' })
+          .to('[data-labels]', { opacity: 1, y: 0, duration: 0.9, ease: E }, 0.9)
+          .to('[data-thumb]', { scale: 1, duration: 0.8, ease: 'back.out(1.5)' }, 1.1)
+          .to('[data-hline]', { yPercent: 0, duration: 1.1, ease: E, stagger: 0.09 }, 1.2)
+          .to('[data-panel]', { opacity: 1, filter: 'blur(0px)', duration: 1.3, ease: 'power2.out' }, 1.2)
+          .to(l, { yPercent: 0, opacity: 1, duration: 0.9, ease: 'power3.out', stagger: 0.1 }, 1.3)
+          .to(l, { color: '#182C31', duration: 0.7, ease: 'none', stagger: 0.1 }, 1.55)
+          .to('[data-badge]', { scale: 1, duration: 0.8, ease: 'back.out(1.6)' }, 1.9)
+          .to('[data-side]', { opacity: 1, y: 0, duration: 1, ease: E }, 1.9)
+          .to('[data-small]', { opacity: 1, filter: 'blur(0px)', duration: 1.2, ease: 'power2.out' }, 2.6);
+        gsap.to('[data-spin]', { rotation: 360, duration: 12, ease: 'none', repeat: -1, transformOrigin: '50% 50%' });
+      }
+      // HERO -> FEATURED: the central panel grows to full bleed and becomes Project One
+      gsap.timeline({ scrollTrigger: { trigger: '[data-hero]', start: 'top top', end: () => '+=' + innerHeight * 1.1, scrub: 0.7, invalidateOnRefresh: true } })
+        .to('[data-panel]', { left: 0, top: 0, width: '100vw', height: '100vh', ease: 'power2.inOut', duration: 1 }, 0)
+        .to('[data-word] [data-l]', { yPercent: -60, opacity: 0, ease: 'power2.in', duration: 0.5, stagger: 0.03 }, 0)
+        .to(['[data-hl]', '[data-side]', '[data-small]', '[data-badge]', '[data-labels]', '[data-thumb]'], { opacity: 0, y: -30, ease: 'power1.in', duration: 0.4 }, 0)
+        .to('[data-plabel]', { opacity: 0, duration: 0.2 }, 0)
+        .to('[data-pover]', { opacity: 1, ease: 'power2.out', duration: 0.3 }, 0.7);
+      // curved sheets: each curve flattens as it rises over the previous scene
+      const h = innerHeight * 0.16;
+      q('[data-sheet]').forEach(s => {
+        gsap.fromTo(s, { borderTopLeftRadius: '50% ' + h + 'px', borderTopRightRadius: '50% ' + h + 'px' },
+          { borderTopLeftRadius: '0% 0px', borderTopRightRadius: '0% 0px', ease: 'none',
+            scrollTrigger: { trigger: s, start: 'top bottom', end: 'top 15%', scrub: true, invalidateOnRefresh: true } });
+      });
+      // previous scene recedes under the next sheet
+      gsap.to('[data-wr] [data-card]', { opacity: 0.35, ease: 'none', scrollTrigger: { trigger: '#services', start: 'top 95%', end: 'top 20%', scrub: true } });
+      gsap.to('#services [data-row]', { yPercent: -4, ease: 'none', scrollTrigger: { trigger: '#about', start: 'top 95%', end: 'top 20%', scrub: true } });
+      gsap.to('#about > div', { opacity: 0.4, ease: 'none', scrollTrigger: { trigger: '#contact', start: 'top 95%', end: 'top 20%', scrub: true } });
+      // work heading: two lines slide in from opposite sides, rule draws across
+      const wst = { trigger: '[data-whead]', start: 'top 90%', end: 'top 35%', scrub: true };
+      q('[data-wl]').forEach(w => gsap.fromTo(w, { x: w.dataset.dir * innerWidth * 0.16 }, { x: 0, ease: 'none', scrollTrigger: wst }));
+      gsap.to('[data-wbar]', { scaleX: 1, ease: 'none', scrollTrigger: wst });
+      // cards
+      q('[data-card]').forEach(c => {
+        const img = c.querySelector('[data-cimg]'), z = c.querySelector('[data-zoom]');
+        const k = q('[data-card]').indexOf(c), st = { trigger: c, start: 'top 92%', end: 'top 45%', scrub: true };
+        gsap.fromTo(img, { clipPath: k % 2 ? 'inset(0% 0% 0% 100%)' : 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'none', scrollTrigger: st });
+        gsap.fromTo(c.children[1], { y: 36, opacity: 0 }, { y: 0, opacity: 1, ease: 'none', scrollTrigger: st });
+        gsap.fromTo(z, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: c, scrub: true, start: 'top bottom', end: 'bottom top' } });
+        c.addEventListener('mouseenter', () => { z.style.transform = 'scale(1.06)'; });
+        c.addEventListener('mouseleave', () => { z.style.transform = ''; });
+      });
+      // expertise: sticky stage whose scene morphs (circle wipe) as each service crosses the reading line
+      if (innerWidth < 900) {
+        gsap.set('[data-sgrid]', { gridTemplateColumns: '1fr', rowGap: 0 });
+        gsap.set('[data-swrap]', { position: 'static', gridRow: '1 / span 2', gridColumn: 1, alignSelf: 'stretch' });
+        gsap.set('[data-spanel]', { position: 'sticky', top: 72, height: '34vh', zIndex: 3 });
+        gsap.set('[data-slist]', { gridRow: 2, gridColumn: 1, marginTop: 'calc(34vh + 16px)', position: 'relative', zIndex: 1, background: '#fff' });
+        gsap.set('[data-sblock]', { minHeight: '40vh' });
+      }
+      const scenes = q('[data-scene]'), names = q('[data-sname]'), descs = q('[data-sdesc]'), blocks = q('[data-sblock]');
+      let cur = 0, z = 1;
+      const enter = i => {
+        const sc = scenes[i], els = sc.querySelectorAll('[data-el],[data-bar],[data-fill]');
+        if (i === 0) gsap.fromTo(els, { scale: 0 }, { scale: 1, duration: 0.5, stagger: { each: 0.02, from: 'random' }, ease: 'back.out(1.8)', overwrite: true });
+        if (i === 1) gsap.fromTo(els, { rotation: 0, x: 0 }, { rotation: k => [-9, 0, 9][k], x: k => [-34, 0, 34][k], duration: 1.1, ease: E, overwrite: true });
+        if (i === 2) { gsap.fromTo(els[0], { scale: 0.5 }, { scale: 1, duration: 0.9, ease: 'back.out(1.6)', overwrite: true }); gsap.fromTo(els[1], { scaleX: 0 }, { scaleX: 1, duration: 2, ease: 'power2.inOut', overwrite: true }); }
+        if (i === 3) gsap.fromTo(sc.querySelectorAll('[data-ring]'), { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 1, ease: E, stagger: 0.12, overwrite: true });
+        if (i === 4) gsap.fromTo(els, { scaleY: 0 }, { scaleY: 1, duration: 1, ease: E, stagger: 0.08, overwrite: true });
+      };
+      q('[data-ring]').forEach((r, k) => gsap.to(r, { rotation: k % 2 ? -360 : 360, duration: 9 + k * 4, ease: 'none', repeat: -1 }));
+      const paint = i => {
+        gsap.to(names, { color: k => (k === i ? '#182C31' : '#bccac7'), duration: 0.5 });
+        gsap.to(descs, { opacity: k => (k === i ? 1 : 0.45), duration: 0.5 });
+        gsap.to('[data-cnt]', { yPercent: -20 * i, duration: 0.7, ease: 'power3.inOut' });
+      };
+      const activate = i => {
+        if (i === cur) return; cur = i; paint(i);
+        const sc = scenes[i]; sc.style.zIndex = ++z;
+        gsap.fromTo(sc, { clipPath: 'circle(0% at 50% 50%)' }, { clipPath: 'circle(75% at 50% 50%)', duration: 0.9, ease: 'power3.inOut', overwrite: true });
+        enter(i);
+      };
+      paint(0); scenes[0].style.zIndex = 1;
+      ST.create({ trigger: '[data-spanel]', start: 'top 85%', once: true, onEnter: () => enter(0) });
+      blocks.forEach((b, i) => ST.create({ trigger: b, start: 'top 58%', end: 'bottom 58%', onToggle: self => self.isActive && activate(i) }));
+      gsap.to('[data-pfill]', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '[data-slist]', start: 'top 58%', end: 'bottom 58%', scrub: true } });
+      // about portrait opens like the hero badge: circle -> full frame
+      gsap.to('[data-aport]', { clipPath: 'circle(75% at 50% 50%)', ease: 'none', scrollTrigger: { trigger: '[data-aport]', start: 'top 90%', end: 'top 30%', scrub: true } });
+      // word reveals
+      q('[data-split]').forEach(el => {
+        if (reduce) return;
+        const words = el.textContent.trim().split(/\s+/); el.innerHTML = '';
+        const spans = words.map(w => {
+          const o = document.createElement('span'); o.style.cssText = 'display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-right:.26em';
+          const i = document.createElement('span'); i.style.display = 'inline-block'; i.textContent = w; o.appendChild(i); el.appendChild(o); return i;
+        });
+        gsap.from(spans, { yPercent: 110, duration: 1.1, ease: E, stagger: 0.04, scrollTrigger: { trigger: el, start: 'top 88%' } });
+      });
+      // contact: same letter choreography as the hero wordmark
+      const cl = q('[data-cl]');
+      if (!reduce) {
+        gsap.set(cl, { yPercent: 70, opacity: 0, color: '#b7c7c4' });
+        gsap.timeline({ scrollTrigger: { trigger: '#contact', start: 'top 45%' } })
+          .to(cl, { yPercent: 0, opacity: 1, duration: 0.9, ease: 'power3.out', stagger: 0.1 }, 0)
+          .to(cl, { color: '#182C31', duration: 0.7, ease: 'none', stagger: 0.1 }, 0.25);
+        gsap.from('[data-cta]', { scale: 0, duration: 0.9, ease: 'back.out(1.6)', scrollTrigger: { trigger: '#contact', start: 'top 40%' } });
+      }
+      if (!reduce && matchMedia('(pointer:fine)').matches) q('[data-mag]').forEach(b => {
+        const x = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3' }), y = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3' });
+        b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect(); x((e.clientX - r.left - r.width / 2) * 0.3); y((e.clientY - r.top - r.height / 2) * 0.3); });
+        b.addEventListener('mouseleave', () => { x(0); y(0); });
+      });
+    });
+  }
+}
+</script>
+</body>
+</html>

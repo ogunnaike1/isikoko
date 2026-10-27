@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: auto; }
+body { margin: 0; background: #fff; color: #182C31; font-family: Satoshi, sans-serif; overflow-x: clip; }
+* { box-sizing: border-box; }
+a { color: #367C83; }
+a:hover { color: #182C31; }
+:focus-visible { outline: 2px solid #367C83; outline-offset: 3px; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
