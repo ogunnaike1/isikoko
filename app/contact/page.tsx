@@ -3,20 +3,19 @@ import Motion from "@/components/Motion";
 import PageHero from "@/components/PageHero";
 import Sheet from "@/components/Sheet";
 import ContactForm from "@/components/ContactForm";
-import Ph from "@/components/Ph";
-import { images } from "@/content/images";
 import Wordmark from "@/components/Wordmark";
 import { site } from "@/content/site";
 import { contactPage as c } from "@/content/pages";
 
-export const metadata: Metadata = { title: "Contact — Digital Content & Marketing Specialist", description: c.intro };
+export const metadata: Metadata = { title: "Contact", description: c.intro };
 
 export default function ContactPage() {
   const rows: [string, string, string?][] = [
-    ["Email", site.email, site.email && `mailto:${site.email}`],
+    ["Email", site.email, `mailto:${site.email}`],
+    ["WhatsApp", site.whatsapp, site.whatsappLink],
     ["LinkedIn", site.linkedin, site.linkedin],
     ["Location", site.location],
-  ];
+  ].filter(([, v]) => v) as [string, string, string?][];
   return (
     <Motion>
       <PageHero eyebrow={c.eyebrow} lines={c.lines} intro={c.intro} accentLast />
@@ -30,10 +29,9 @@ export default function ContactPage() {
             <div data-fx="line" className="my-9 h-px bg-mist-line" />
             <ul data-fx="stagger" className="m-0 grid list-none gap-3.5 p-0 font-sans text-xs font-medium uppercase tracking-[.1em] text-ink-2">
               {rows.map(([k, val, href]) => (
-                <li key={k} data-item>{k} — {val ? (href ? <a href={href}>{val}</a> : val) : "add in site config"}</li>
+                <li key={k} data-item>{k} — {href ? <a href={href}>{val}</a> : val}</li>
               ))}
             </ul>
-            <Ph img={images.serviceInfluencer} ratio="4/3" dir="l" className="mt-10 hidden max-w-[460px] md:block" sizes="30vw" />
           </div>
           <div data-fx="rise" data-y="60"><ContactForm /></div>
         </div>

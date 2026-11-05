@@ -39,29 +39,5 @@ Pages are server components wrapped in `<Motion>`; effects are declared with `da
 ## Still to do
 Real assets (images/video), email/LinkedIn/location in `content/site.ts`, OG image, a per-process rate limiter replacement if you scale beyond one instance.
 
-## Image credits
-All photos are from [Unsplash](https://unsplash.com) and used under the [Unsplash License](https://unsplash.com/license) (free for commercial use, no attribution required — credited here anyway). They are stand-ins: replace each file in `public/images/` with your own work, keeping the filename or updating `content/images.ts`.
-
-| File | Photographer | Photo |
-|---|---|---|
-| `project-one.jpg` | Vitaly Gariev | [unsplash.com/photos/AqfGvZw56X8](https://unsplash.com/photos/AqfGvZw56X8) |
-| `project-two.jpg` | Nubelson Fernandes | [unsplash.com/photos/ZdOsQiwp0Ss](https://unsplash.com/photos/ZdOsQiwp0Ss) |
-| `project-three.jpg` | Andres | [unsplash.com/photos/mfWsMDdN-Ro](https://unsplash.com/photos/mfWsMDdN-Ro) |
-| `project-four.jpg` | Vitaly Gariev | [unsplash.com/photos/euNzbqwIIUI](https://unsplash.com/photos/euNzbqwIIUI) |
-| `hero-small.jpg` | Swello | [unsplash.com/photos/7ljc7nkjNcc](https://unsplash.com/photos/7ljc7nkjNcc) |
-| `service-social.jpg` | Sumup | [unsplash.com/photos/Aqc7znjxROM](https://unsplash.com/photos/Aqc7znjxROM) |
-| `service-planning.jpg` | Alehandra | [unsplash.com/photos/QK4Ov_0APVU](https://unsplash.com/photos/QK4Ov_0APVU) |
-| `service-video.jpg` | Sandisk | [unsplash.com/photos/udRj4qXyAPs](https://unsplash.com/photos/udRj4qXyAPs) |
-| `service-influencer.jpg` | Videodeck Co | [unsplash.com/photos/aqwHzP5qaJU](https://unsplash.com/photos/aqwHzP5qaJU) |
-| `service-support.jpg` | Marvin Meyer | [unsplash.com/photos/SYTO3xs06fU](https://unsplash.com/photos/SYTO3xs06fU) |
-| `about-portrait.jpg` | Jakub Zerdzicki | [unsplash.com/photos/aSoQQLyPe1U](https://unsplash.com/photos/aSoQQLyPe1U) |
-| `about-one.jpg` | Muhammad Taha Ibrahim | [unsplash.com/photos/UOIk3LZoR9k](https://unsplash.com/photos/UOIk3LZoR9k) |
-| `about-two.jpg` | Jakub Zerdzicki | [unsplash.com/photos/na8R4tWL73I](https://unsplash.com/photos/na8R4tWL73I) |
-| `gallery-a.jpg` | Vitaly Gariev | [unsplash.com/photos/AqfGvZw56X8](https://unsplash.com/photos/AqfGvZw56X8) |
-| `gallery-b.jpg` | Jakub Zerdzicki | [unsplash.com/photos/KX0oug6R-CI](https://unsplash.com/photos/KX0oug6R-CI) |
-| `gallery-c.jpg` | Theregisti | [unsplash.com/photos/ziSzilQLSOM](https://unsplash.com/photos/ziSzilQLSOM) |
-| `gallery-d.jpg` | Andri Aeschlimann | [unsplash.com/photos/2toXsQuUg3k](https://unsplash.com/photos/2toXsQuUg3k) |
-| `gallery-e.jpg` | Walls Io | [unsplash.com/photos/BuD00MfwvFY](https://unsplash.com/photos/BuD00MfwvFY) |
-| `video-poster.jpg` | Mark Cruz | [unsplash.com/photos/VW2oU66mwbc](https://unsplash.com/photos/VW2oU66mwbc) |
-
-The About “portrait” is a workspace shot on purpose — put a real photo of yourself there.
+## Images
+All images are real work: screenshots in `public/images/` and video stills/videos hosted on Cloudinary (see `content/images.ts`).

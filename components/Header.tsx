@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import TransitionLink from "./TransitionLink";
-import { images } from "@/content/images";
+import { site } from "@/content/site";
 import { gsap, ScrollTrigger, EASE, reduced } from "@/lib/gsap";
 import { lockScroll } from "@/lib/lenis";
 
@@ -17,6 +16,7 @@ const LINKS = [
 const THUMB = "clamp(44px,4.4vw,60px)";
 
 export default function Header() {
+  const initials = site.name.split(" ").map((w) => w[0]).slice(0, 2).join("");
   const path = usePathname();
   const home = path === "/";
   const [solid, setSolid] = useState(false);
@@ -81,7 +81,7 @@ export default function Header() {
               className="pointer-events-auto absolute block overflow-hidden"
               style={{ left: "3vw", top: "3vh", width: THUMB, aspectRatio: "7/8" }}
             >
-              <Image src={images.aboutPortrait.src} alt="" fill sizes="60px" className="object-cover" />
+              <span aria-hidden className="flex h-full w-full items-center justify-center bg-petrol font-display text-sm font-semibold text-white">{initials}</span>
             </TransitionLink>
             <div ref={bar} aria-hidden className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-teal" />
           </>

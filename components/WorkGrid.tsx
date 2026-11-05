@@ -64,16 +64,15 @@ export default function WorkGrid({ items }: { items: Project[] }) {
 
       <div ref={grid} className="grid grid-cols-1 items-start gap-x-[2vw] gap-y-[clamp(36px,6vw,90px)] md:grid-cols-2">
         {items.map((p, i) => {
-          const v = visual(p, i);
+          const v = visual(p);
           return (
             <TransitionLink key={p.slug} href={`/work/${p.slug}`} data-pcard data-cat={p.category} className="group block !text-petrol no-underline" aria-label={`${p.title} — ${p.category}`}>
               <div data-fx="clip" data-dir={i % 2 ? "r" : "l"} className="relative overflow-hidden bg-mist" style={{ aspectRatio: v.ratio }}>
                 <div data-par className="absolute" style={{ inset: "-8%" }}>
-                  <div className="relative h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.06]" style={{ background: v.img ? undefined : `repeating-linear-gradient(135deg,${v.c1} 0 12px,${v.c2} 12px 24px)` }}>
+                  <div className="relative h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.06]" >
                     {v.img && <Image src={v.img.src} alt={v.img.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" style={{ objectPosition: v.img.pos }} />}
                   </div>
                 </div>
-                {!v.img && <span className="absolute bottom-3.5 left-4 font-sans text-[10px] font-medium uppercase tracking-[.14em] text-ink-3">{v.media}</span>}
               </div>
               <div className="flex items-baseline justify-between gap-3.5 border-b border-mist-line py-4">
                 <h3 className="m-0 font-display font-medium" style={{ fontSize: "clamp(24px,2.4vw,38px)", lineHeight: 1.05, letterSpacing: "-.01em" }}>{p.title}</h3>

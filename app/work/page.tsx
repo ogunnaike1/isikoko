@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 import { projects } from "@/content/projects";
 import { workPage as c } from "@/content/pages";
 
-export const metadata: Metadata = { title: "Work — Digital Content & Marketing Specialist", description: c.intro };
+export const metadata: Metadata = { title: "Work", description: c.intro };
 
 export default function WorkPage() {
   return (

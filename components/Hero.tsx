@@ -1,15 +1,18 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { gsap, EASE, reduced } from "@/lib/gsap";
-import Image from "next/image";
 import { useMagnetic } from "@/lib/useMagnetic";
-import { images } from "@/content/images";
+import { featuredProject } from "@/content/projects";
+import { categoryLabel } from "@/content/projects";
+import { site } from "@/content/site";
 
 const WORD = "CONTENT";
 let introPlayed = false; // the curtain intro plays once per visit, not on every return to Home
 const stripe = (a: string, b: string, deg = 135, n = 10) => `repeating-linear-gradient(${deg}deg,${a} 0 ${n}px,${b} ${n}px ${n * 2}px)`;
 
 export default function Hero() {
+  const fv = featuredProject.videos![0];
+  const initials = site.name.split(" ").map((w) => w[0]).slice(0, 2).join("");
   const root = useRef<HTMLElement>(null);
   useMagnetic(root);
 
@@ -51,7 +54,7 @@ export default function Hero() {
         gsap.to("[data-spin]", { rotation: 360, duration: 12, ease: "none", repeat: -1, transformOrigin: "50% 50%" });
       }
 
-      // ── Scroll: hero panel grows to full bleed and becomes Project One ──
+      // ── Scroll: hero panel grows to full bleed and becomes the featured project ──
       gsap.timeline({ scrollTrigger: { trigger: root.current, start: "top top", end: () => "+=" + innerHeight * 1.1, scrub: 0.7, invalidateOnRefresh: true } })
         .to("[data-panel]", { left: 0, top: 0, width: "100vw", height: "100vh", ease: "power2.inOut", duration: 1 }, 0)
         .to("[data-word] [data-l]", { yPercent: -60, opacity: 0, ease: "power2.in", duration: 0.5, stagger: 0.03 }, 0)
@@ -69,31 +72,29 @@ export default function Hero() {
           className="pointer-events-none fixed inset-x-0 top-0 z-[100] flex justify-center bg-petrol font-sans text-xs font-medium uppercase tracking-[.18em] text-white"
           style={{ height: "128vh", borderRadius: "0 0 50% 50% / 0 0 30vh 30vh", paddingTop: "44vh" }}
         >
-          <span>Digital Content &amp; Marketing Specialist</span>
+          <span className="flex flex-col items-center gap-3 text-center"><span>{site.name}</span><span className="opacity-70">Operations &amp; Partnerships Manager</span></span>
         </div>
 
         <div className="sticky top-0 h-screen overflow-hidden bg-white">
           {/* thumbnail */}
           <div data-thumb className="absolute z-[3] overflow-hidden" style={{ left: "3vw", top: "3vh", width: "clamp(44px,4.4vw,60px)", aspectRatio: "7/8" }}>
-            <Image src={images.aboutPortrait.src} alt="" fill sizes="60px" className="object-cover" />
+            <span aria-hidden className="flex h-full w-full items-center justify-center bg-petrol font-display text-sm font-semibold text-white">{initials}</span>
           </div>
 
           {/* headline */}
           <h1 data-hl className="absolute m-0 font-display font-medium" style={{ left: "3vw", top: "15vh", width: "min(30vw,460px)", minWidth: 240, fontSize: "clamp(24px,2.6vw,42px)", lineHeight: 1.08, letterSpacing: "-.015em" }}>
-            {["I create content", "that connects brands", "with their audience."].map((t) => (
+            {["I keep campaigns", "moving, creators", "and brands aligned."].map((t) => (
               <span key={t} className="block overflow-hidden"><span data-hline className="block">{t}</span></span>
             ))}
           </h1>
 
           {/* central panel */}
           <div data-panel className="absolute z-[2] overflow-hidden" style={{ left: "35vw", top: "12vh", width: "max(26vw,180px)", height: "62vh", background: stripe("#EAF0ED", "#dfe8e4") }}>
-            {/* showreel poster — swap for a <video> when ready */}
-            <Image src={images.projectOne.src} alt={images.projectOne.alt} fill priority sizes="100vw" className="object-cover" style={{ objectPosition: images.projectOne.pos }} />
+            <video src={fv.src} poster={fv.poster} autoPlay muted loop playsInline preload="auto" aria-label={featuredProject.title} className="absolute inset-0 h-full w-full object-cover" />
             <div data-pover className="absolute inset-0 flex flex-col justify-between text-petrol opacity-0" style={{ padding: "clamp(70px,12vh,110px) 3vw 4vh", background: "linear-gradient(180deg,rgba(255,255,255,.72) 0%,rgba(255,255,255,.1) 40%,rgba(255,255,255,.1) 60%,rgba(255,255,255,.78) 100%)" }}>
-              <div className="flex justify-between font-sans text-xs font-medium uppercase tracking-[.14em]"><span>01 — Featured</span><span>Social Media &amp; Strategy</span></div>
+              <div className="flex justify-between font-sans text-xs font-medium uppercase tracking-[.14em]"><span>01 — Featured</span><span>{categoryLabel(featuredProject.category)}</span></div>
               <div className="flex items-end justify-between gap-5">
-                <span className="font-display font-semibold" style={{ fontSize: "clamp(52px,11vw,190px)", lineHeight: 0.85, letterSpacing: "-.03em" }}>Project<br />One</span>
-                <span className="text-right font-sans text-[11px] font-medium uppercase tracking-[.14em] text-ink-3">Placeholder<br />Replace in project data</span>
+                <span className="font-display font-semibold" style={{ fontSize: "clamp(40px,8vw,140px)", lineHeight: 0.85, letterSpacing: "-.03em" }}>{featuredProject.title}</span>
               </div>
             </div>
           </div>
@@ -112,17 +113,12 @@ export default function Hero() {
           {/* intro + buttons */}
           <div data-side className="absolute z-[3]" style={{ right: "3vw", top: "15vh", width: "min(24vw,330px)", minWidth: 230 }}>
             <p className="mb-5 mt-0 font-sans text-ink-2" style={{ fontSize: "clamp(13px,1vw,15px)", lineHeight: 1.6 }}>
-              I help brands build meaningful connections through content strategy, social media management, video editing, influencer marketing, and creative digital campaigns.
+              I support fast-paced digital brands with operations, influencer marketing and partnerships, campaign coordination, social media execution and AI video content.
             </p>
             <div className="flex flex-wrap gap-2">
               <a data-mag href="#work" className="inline-block rounded-full bg-teal px-[22px] py-[13px] font-sans text-[13px] font-bold !text-white no-underline hover:bg-teal-hover">View My Work</a>
               <a data-mag href="#contact" className="inline-block rounded-full border border-petrol px-[21px] py-3 font-sans text-[13px] font-bold !text-petrol no-underline hover:bg-mist">Get In Touch</a>
             </div>
-          </div>
-
-          {/* small image */}
-          <div data-small className="absolute z-[2] overflow-hidden" style={{ right: "5vw", bottom: "calc(31vh + min(16vw,32vh)*.1 + 44px)", width: "clamp(46px,5.6vw,92px)", aspectRatio: "4/5" }}>
-            <Image src={images.heroSmall.src} alt={images.heroSmall.alt} fill sizes="92px" className="object-cover" />
           </div>
 
           {/* labels */}

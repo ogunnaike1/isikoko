@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Motion from "@/components/Motion";
 import PageHero from "@/components/PageHero";
 import Sheet from "@/components/Sheet";
-import Ph from "@/components/Ph";
 import ServiceArt from "@/components/ServiceArt";
 import Contact from "@/components/Contact";
 import { services } from "@/content/services";
 import { servicesPage as c, process } from "@/content/pages";
 
-export const metadata: Metadata = { title: "Services — Digital Content & Marketing Specialist", description: c.intro };
+export const metadata: Metadata = { title: "Services", description: c.intro };
 
 const Ticker = ({ dir, outline = false }: { dir: "l" | "r"; outline?: boolean }) => {
   const row = (k: number) => c.marquee.map((t) => (
@@ -43,10 +42,7 @@ export default function ServicesPage() {
           {services.map((s, i) => (
             <article key={s.n} className="grid items-center gap-[clamp(28px,6vw,110px)] md:grid-cols-2">
               <div className={i % 2 ? "md:order-2" : ""}>
-                <div className="relative">
-                  <Ph img={s.img} ratio="5/4" dir="circle" end="top 30%" />
-                  <div className="absolute -bottom-[7%] left-[5%] w-[34%] overflow-hidden border-[5px] border-white shadow-none" style={{ aspectRatio: "1" }}><ServiceArt i={i} /></div>
-                </div>
+                <div className="mx-auto w-full max-w-[520px] overflow-hidden" style={{ aspectRatio: "1" }}><ServiceArt i={i} /></div>
               </div>
               <div>
                 <span data-fx="rise" className="font-sans text-xs font-medium tracking-[.14em] text-teal">{s.n} / 05</span>

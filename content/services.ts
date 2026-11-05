@@ -1,9 +1,7 @@
-import { images } from "./images";
-
 export const services = [
-  { img: images.serviceSocial, n: "01", name: "Social Media Management", desc: "Content calendars, community care and consistent publishing across channels.", tags: ["Content calendars", "Community", "Publishing"] },
-  { img: images.servicePlanning, n: "02", name: "Content Creation & Planning", desc: "Strategy-led concepts, graphics and copy built around brand goals.", tags: ["Strategy", "Graphics", "Copy"] },
-  { img: images.serviceVideo, n: "03", name: "Video Editing & Production", desc: "Short-form, YouTube and educational video, from cut to caption.", tags: ["Short-form", "YouTube", "Educational"] },
-  { img: images.serviceInfluencer, n: "04", name: "Influencer Marketing", desc: "Outreach, collaborations and campaign coordination with the right voices.", tags: ["Outreach", "Collaborations", "Coordination"] },
-  { img: images.serviceSupport, n: "05", name: "Digital Marketing Support", desc: "Campaign assets, lead-generation support and daily marketing operations.", tags: ["Campaign assets", "Lead generation", "Operations"] },
+  { n: "01", name: "Operations & Partnerships", desc: "Cross-functional workflows, partner and vendor coordination, trackers and documentation that keep campaigns on time.", tags: ["Workflow coordination", "Partner management", "Process tracking"] },
+  { n: "02", name: "Influencer Marketing", desc: "Outreach, onboarding, briefing and delivery tracking for creator campaigns across regions.", tags: ["Outreach", "Onboarding", "Campaign execution"] },
+  { n: "03", name: "Social Media & Content", desc: "Planning, scheduling and publishing, plus community and customer engagement across platforms.", tags: ["Scheduling", "Publishing", "Engagement"] },
+  { n: "04", name: "AI Video & Editing", desc: "AI-generated and edited short-form video for storytelling, financial education and brand communication.", tags: ["AI video", "Short-form", "Storytelling"] },
+  { n: "05", name: "Executive & Admin Support", desc: "Executive support, customer communication and clean records for fast-moving digital and e-commerce teams.", tags: ["Executive support", "Customer comms", "Records"] },
 ];

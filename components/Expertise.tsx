@@ -2,12 +2,13 @@
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger, EASE } from "@/lib/gsap";
 import { splitWordsReveal } from "@/lib/splitWords";
-import Image from "next/image";
 import { services } from "@/content/services";
 import Sheet from "./Sheet";
 
 const hidden = { clipPath: "circle(0% at 50% 50%)" };
 const sceneBase = "absolute inset-0 overflow-hidden bg-mist";
+
+const SCENE_BG = ["#367C83", "#D8E69A", "#182C31", "#EAF0ED", "#367C83"];
 
 export default function Expertise() {
   const root = useRef<HTMLDivElement>(null);
@@ -69,8 +70,8 @@ export default function Expertise() {
             <div data-spanel className="relative overflow-hidden bg-mist" style={{ height: "clamp(230px,46vw,72vh)" }}>
               {services.map((sv, k) => (
                 <div key={sv.n} data-scene className={sceneBase} style={k ? hidden : undefined}>
-                  <div data-kb className="absolute inset-0">
-                    <Image src={sv.img.src} alt={sv.img.alt} fill sizes="(min-width: 900px) 48vw, 100vw" priority={k === 0} className="object-cover" style={{ objectPosition: sv.img.pos }} />
+                  <div data-kb className="absolute inset-0 flex items-end p-[6%]" style={{ background: SCENE_BG[k % SCENE_BG.length], color: k % 2 ? "#182C31" : "#fff" }}>
+                    <span className="font-display font-semibold" style={{ fontSize: "clamp(64px,14vw,220px)", lineHeight: 0.85, letterSpacing: "-.04em" }}>{sv.n}</span>
                   </div>
                 </div>
               ))}

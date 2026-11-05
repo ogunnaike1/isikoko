@@ -3,16 +3,17 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Digital Content & Marketing Specialist",
+  title: { default: `${site.name} — Operations & Partnerships Manager`, template: `%s | ${site.name}` },
   description:
-    "I help brands build meaningful connections through content strategy, social media management, video editing, influencer marketing, and creative digital campaigns.",
+    "Operations and partnerships manager supporting digital brands with influencer marketing, campaign coordination, social media execution and AI video content.",
   openGraph: {
-    title: "Digital Content & Marketing Specialist",
-    description: "I create content that connects brands with their audience.",
+    title: `${site.name} — Operations & Partnerships Manager`,
+    description: "Operations, influencer marketing and AI video content for digital brands.",
     type: "website",
-    images: ["/images/project-one.jpg"],
+    images: ["/images/monosend-report.png"],
   },
 };
 

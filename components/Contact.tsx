@@ -27,7 +27,12 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
-  const rows = [["Email", site.email], ["LinkedIn", site.linkedin], ["Location", site.location]];
+  const rows = [
+    ["Email", site.email, `mailto:${site.email}`],
+    ["WhatsApp", site.whatsapp, site.whatsappLink],
+    ["LinkedIn", site.linkedin, site.linkedin],
+    ["Location", site.location, ""],
+  ].filter(([, v]) => v);
 
   return (
     <div ref={root} className="relative z-[5]">
@@ -45,8 +50,8 @@ export default function Contact() {
         </TransitionLink>
 
         <ul className="absolute m-0 grid list-none gap-3.5 p-0 font-sans text-xs font-medium uppercase tracking-[.1em] text-ink-2" style={{ right: "3vw", top: "20vh", width: "min(24vw,330px)", minWidth: 220 }}>
-          {rows.map(([k, v]) => (
-            <li key={k}>{k} — {v ? <a href={k === "Email" ? `mailto:${v}` : v}>{v}</a> : "add in site config"}</li>
+          {rows.map(([k, v, href]) => (
+            <li key={k}>{k} — {href ? <a href={href}>{v}</a> : v}</li>
           ))}
         </ul>
 

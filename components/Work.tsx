@@ -40,7 +40,7 @@ export default function Work() {
             </h2>
             <div data-wbar className="mt-[22px] h-[3px] origin-left scale-x-0 bg-teal" />
           </div>
-          <p className="m-0 max-w-[300px] text-sm leading-relaxed text-ink-3">Social, video, influencer and campaign projects.</p>
+          <p className="m-0 max-w-[300px] text-sm leading-relaxed text-ink-3">Operations, influencer, social and video projects.</p>
         </div>
 
         <div className="grid" style={{ gridTemplateColumns: "repeat(12,minmax(0,1fr))", gap: "clamp(36px,6vw,90px) 2vw" }}>
