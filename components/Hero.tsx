@@ -6,7 +6,6 @@ import { featuredProject } from "@/content/projects";
 import { categoryLabel } from "@/content/projects";
 import { site } from "@/content/site";
 
-const WORD = "CONTENT";
 let introPlayed = false; // the curtain intro plays once per visit, not on every return to Home
 const stripe = (a: string, b: string, deg = 135, n = 10) => `repeating-linear-gradient(${deg}deg,${a} 0 ${n}px,${b} ${n}px ${n * 2}px)`;
 
@@ -29,12 +28,10 @@ export default function Hero() {
         gsap.set(["[data-badge]", "[data-small]"], { display: "none" });
       }
       if (innerHeight < 700) q("[data-small]").forEach((e) => (e.style.display = "none"));
-      const l = q("[data-l]");
 
       // ── Intro ────────────────────────────────────────────────
       if (rm) gsap.set("[data-curtain]", { display: "none" });
       else {
-        gsap.set(l, { yPercent: 70, opacity: 0, color: "#b7c7c4" });
         gsap.set("[data-hline]", { yPercent: 110 });
         gsap.set("[data-panel]", { opacity: 0, filter: "blur(16px)" });
         gsap.set(["[data-thumb]", "[data-badge]"], { scale: 0 });
@@ -46,8 +43,6 @@ export default function Hero() {
           .to("[data-thumb]", { scale: 1, duration: 0.8, ease: "back.out(1.5)" }, 1.1)
           .to("[data-hline]", { yPercent: 0, duration: 1.1, ease: EASE, stagger: 0.09 }, 1.2)
           .to("[data-panel]", { opacity: 1, filter: "blur(0px)", duration: 1.3, ease: "power2.out" }, 1.2)
-          .to(l, { yPercent: 0, opacity: 1, duration: 0.9, ease: "power3.out", stagger: 0.1 }, 1.3)
-          .to(l, { color: "#182C31", duration: 0.7, ease: "none", stagger: 0.1 }, 1.55)
           .to("[data-badge]", { scale: 1, duration: 0.8, ease: "back.out(1.6)" }, 1.9)
           .to("[data-side]", { opacity: 1, y: 0, duration: 1, ease: EASE }, 1.9)
           .to("[data-small]", { opacity: 1, filter: "blur(0px)", duration: 1.2, ease: "power2.out" }, 2.6);
@@ -57,7 +52,6 @@ export default function Hero() {
       // ── Scroll: hero panel grows to full bleed and becomes the featured project ──
       gsap.timeline({ scrollTrigger: { trigger: root.current, start: "top top", end: () => "+=" + innerHeight * 1.1, scrub: 0.7, invalidateOnRefresh: true } })
         .to("[data-panel]", { left: 0, top: 0, width: "100vw", height: "100vh", ease: "power2.inOut", duration: 1 }, 0)
-        .to("[data-word] [data-l]", { yPercent: -60, opacity: 0, ease: "power2.in", duration: 0.5, stagger: 0.03 }, 0)
         .to(["[data-hl]", "[data-side]", "[data-small]", "[data-badge]", "[data-labels]", "[data-thumb]"], { opacity: 0, y: -30, ease: "power1.in", duration: 0.4 }, 0)
         .to("[data-pover]", { opacity: 1, ease: "power2.out", duration: 0.3 }, 0.7);
     }, root);
@@ -124,13 +118,6 @@ export default function Hero() {
           {/* labels */}
           <div data-labels className="absolute z-[3] flex justify-between font-sans text-[11px] font-medium tracking-[.1em]" style={{ left: "3vw", right: "3vw", bottom: "calc(31vh + min(16vw,32vh)*.1 + 14px)" }}>
             <span>Plan</span><span style={{ marginLeft: "18vw" }}>Create</span><span>Publish</span>
-          </div>
-
-          {/* wordmark — in front of the panel, overlapping its lower edge */}
-          <div data-word aria-label="Content" className="absolute z-[4] flex whitespace-nowrap font-display font-medium text-petrol" style={{ left: "3vw", bottom: "calc(31vh - min(16vw,32vh)*.7)", fontSize: "min(16vw,32vh)", lineHeight: 0.8, letterSpacing: ".015em" }}>
-            {WORD.split("").map((c, i) => (
-              <span key={i} aria-hidden className="block overflow-hidden" style={{ padding: ".05em 0 .02em" }}><span data-l className="block">{c}</span></span>
-            ))}
           </div>
         </div>
       </section>

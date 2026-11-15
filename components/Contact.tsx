@@ -24,12 +24,12 @@ export default function Contact() {
 
   return (
     <div ref={root} className="relative z-[5]">
-      <Sheet id="contact" backdrop="#182C31" className="relative overflow-hidden" style={{ minHeight: "100vh", padding: "20vh 3vw 3vh" }}>
-        <h2 data-split className="m-0 font-display font-medium" style={{ width: "min(34vw,520px)", minWidth: 260, fontSize: "clamp(24px,2.6vw,42px)", lineHeight: 1.08, letterSpacing: "-.015em" }}>
+      <Sheet id="contact" backdrop="#182C31" className="relative flex flex-col gap-10 overflow-hidden md:block" style={{ minHeight: "100vh", padding: "20vh 3vw 3vh" }}>
+        <h2 data-split className="m-0 w-full font-display font-medium md:w-[min(34vw,520px)] md:min-w-[260px]" style={{ fontSize: "clamp(24px,2.6vw,42px)", lineHeight: 1.08, letterSpacing: "-.015em" }}>
           Have a brand to grow? Let&apos;s make content people remember.
         </h2>
 
-        <ul className="absolute m-0 grid list-none gap-3.5 p-0 font-sans text-xs font-medium uppercase tracking-[.1em] text-ink-2" style={{ right: "3vw", top: "20vh", width: "min(24vw,330px)", minWidth: 220 }}>
+        <ul className="static m-0 grid list-none gap-3.5 break-words p-0 font-sans text-xs font-medium uppercase tracking-[.1em] text-ink-2 md:absolute md:right-[3vw] md:top-[20vh] md:w-[min(24vw,330px)] md:min-w-[220px]">
           {rows.map(([k, v, href]) => (
             <li key={k}>{k} — {href ? <a href={href}>{v}</a> : v}</li>
           ))}

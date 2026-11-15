@@ -43,9 +43,9 @@ export default function Work() {
           <p className="m-0 max-w-[300px] text-sm leading-relaxed text-ink-3">Operations, influencer, social and video projects.</p>
         </div>
 
-        <div className="grid" style={{ gridTemplateColumns: "repeat(12,minmax(0,1fr))", gap: "clamp(36px,6vw,90px) 2vw" }}>
+        <div className="grid grid-cols-1 md:grid-cols-12" style={{ gap: "clamp(36px,6vw,90px) 2vw" }}>
           {homeCards.map((p) => (
-            <article key={p.slug} data-card className="group" style={{ gridColumn: p.card!.col, marginTop: p.card!.offset ?? 0 }}>
+            <article key={p.slug} data-card className="group md:[grid-column:var(--gc)] md:[margin-top:var(--mt)]" style={{ "--gc": p.card!.col, "--mt": p.card!.offset ?? "0px" } as React.CSSProperties}>
               <div data-cimg className="relative overflow-hidden bg-mist" style={{ aspectRatio: p.card!.ratio }}>
                 <div data-zoom className="absolute" style={{ inset: "-7%" }}>
                   <div className="relative h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.06]">

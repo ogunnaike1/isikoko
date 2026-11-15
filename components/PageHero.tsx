@@ -7,7 +7,7 @@ export default function PageHero({
       <div data-hmeta className="mb-[3vh] flex items-center gap-3 font-sans text-xs font-medium uppercase tracking-[.14em] text-ink-3">
         <span className="h-px w-10 bg-teal" />{eyebrow}
       </div>
-      <h1 data-htitle className="m-0 font-display font-semibold" style={{ fontSize: "clamp(44px,10vw,180px)", lineHeight: 0.88, letterSpacing: "-.035em" }}>
+      <h1 data-htitle className="m-0 font-display font-semibold" style={{ fontSize: "clamp(34px,10vw,180px)", lineHeight: 0.88, letterSpacing: "-.035em" }}>
         {lines.map((l, i) => (
           <span key={l} className="block overflow-hidden" style={{ padding: ".04em 0 .08em" }}>
             <span data-line className={`block ${accentLast && i === lines.length - 1 ? "text-teal" : ""}`}>{l}</span>

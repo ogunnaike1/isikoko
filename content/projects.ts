@@ -42,7 +42,7 @@ export const projects: Project[] = [
     ],
     cover: images.monosendReport, gallery: [images.xAnalytics],
     card: { col: "1 / span 7", ratio: "16/11", cat: "Social Media" } },
-  { slug: "youtuber-video-edits", title: "YouTuber Video Edits", category: "Video Editing & Content Production",
+  { slug: "youtube-video-edits", title: "YouTube Video Edits", category: "Video Editing & Content Production",
     description: "Vertical videos edited for a YouTuber.",
     role: "Video editor",
     deliverables: ["Video editing"],
