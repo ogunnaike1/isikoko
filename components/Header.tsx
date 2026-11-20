@@ -3,41 +3,22 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import TransitionLink from "./TransitionLink";
 import { site } from "@/content/site";
-import { gsap, ScrollTrigger, EASE, reduced } from "@/lib/gsap";
+import { gsap, EASE, reduced } from "@/lib/gsap";
 import { lockScroll } from "@/lib/lenis";
 
 const LINKS = [
   ["Home", "/"],
+  ["What I Do", "/services"],
   ["Work", "/work"],
-  ["Services", "/services"],
   ["About", "/about"],
+  ["Contact", "/contact"],
 ] as const;
-
-const THUMB = "clamp(44px,4.4vw,60px)";
 
 export default function Header() {
   const initials = site.name.split(" ").map((w) => w[0]).slice(0, 2).join("");
   const path = usePathname();
-  const home = path === "/";
-  const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
-  const bar = useRef<HTMLDivElement>(null);
   const menu = useRef<HTMLDivElement>(null);
-
-  // frosted backdrop once the page scrolls (inner pages only; home keeps the transparent hero header)
-  useEffect(() => {
-    const on = () => setSolid(window.scrollY > 40);
-    on();
-    window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
-  }, []);
-
-  // reading-progress line
-  useEffect(() => {
-    if (home || !bar.current) return;
-    const st = ScrollTrigger.create({ start: 0, end: "max", onUpdate: (s) => { gsap.set(bar.current, { scaleX: s.progress }); } });
-    return () => st.kill();
-  }, [home, path]);
 
   useEffect(() => { setOpen(false); }, [path]);
 
@@ -64,60 +45,51 @@ export default function Header() {
     return () => window.removeEventListener("keydown", esc);
   }, []);
 
-  const active = (href: string) => (href === "/" ? home : path.startsWith(href));
-  const link = "relative !text-inherit no-underline after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:bg-current after:transition-transform after:duration-500";
+  const active = (href: string) => (href === "/" ? path === "/" : path.startsWith(href));
 
   return (
     <>
-      <header
-        className="fixed inset-x-0 top-0 z-[60] flex items-center justify-between font-sans text-[11px] font-medium uppercase tracking-[.14em] text-petrol pointer-events-none"
-        style={{ padding: `calc(3vh + 6px) 3vw 0 calc(3vw + ${THUMB} + 20px)` }}
-      >
-        {!home && (
-          <>
-            <div aria-hidden className="absolute inset-x-0 top-0 bg-white/85 backdrop-blur-md transition-opacity duration-500" style={{ height: `calc(6vh + ${THUMB}*1.143)`, opacity: solid ? 1 : 0 }} />
-            <TransitionLink
-              href="/" aria-label="Home"
-              className="pointer-events-auto absolute block overflow-hidden"
-              style={{ left: "3vw", top: "3vh", width: THUMB, aspectRatio: "7/8" }}
-            >
-              <span aria-hidden className="flex h-full w-full items-center justify-center bg-petrol font-display text-sm font-semibold text-white">{initials}</span>
-            </TransitionLink>
-            <div ref={bar} aria-hidden className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-teal" />
-          </>
-        )}
+      <header className="pointer-events-none fixed left-5 right-5 top-4 z-[60] flex items-center justify-between gap-3 font-sans text-petrol max-[560px]:left-4 max-[560px]:right-4">
+        <TransitionLink
+          href="/" aria-label={`${site.name} — home`}
+          className="glass-pill pointer-events-auto flex h-12 items-center gap-2.5 rounded-full !text-petrol no-underline"
+          style={{ padding: "0 20px 0 10px" }}
+        >
+          <span aria-hidden className="flex h-7 w-7 items-center justify-center rounded-full bg-petrol font-display text-[11px] font-semibold text-white">{initials}</span>
+          <span className="whitespace-nowrap text-[15px] font-semibold leading-none tracking-[-.01em]">{site.name}</span>
+        </TransitionLink>
 
-        <nav aria-label="Primary" className="pointer-events-auto relative hidden gap-2.5 min-[900px]:flex">
-          {LINKS.map(([label, href], i) => (
-            <span key={href} className="flex gap-2.5">
-              {i > 0 && <span aria-hidden>|</span>}
-              <TransitionLink href={href} aria-current={active(href) ? "page" : undefined} className={`${link} ${active(href) ? "after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-100"}`}>{label}</TransitionLink>
-            </span>
+        <nav aria-label="Primary" className="glass-pill pointer-events-auto hidden gap-0.5 rounded-full p-1 min-[900px]:flex">
+          {LINKS.map(([label, href]) => (
+            <TransitionLink
+              key={href} href={href} aria-current={active(href) ? "page" : undefined}
+              className={`inline-flex h-10 items-center rounded-full px-5 text-sm font-medium leading-none !text-petrol no-underline transition-colors duration-300 hover:bg-petrol/5 ${active(href) ? "bg-petrol/10" : ""}`}
+            >
+              {label}
+            </TransitionLink>
           ))}
         </nav>
-        <span className="min-[900px]:hidden" />
 
-        <TransitionLink href="/contact" className="pointer-events-auto relative hidden items-center gap-3.5 !text-inherit no-underline min-[900px]:flex">
-          Contact
-          <span aria-hidden className="grid gap-1">{[0, 1, 2].map((i) => <i key={i} className="block h-[1.5px] w-[22px] bg-petrol" />)}</span>
+        <TransitionLink
+          href="/contact"
+          className="cta-pill pointer-events-auto hidden h-12 items-center gap-3.5 whitespace-nowrap rounded-full bg-petrol !text-white no-underline transition-[gap] duration-300 hover:gap-[18px] min-[900px]:inline-flex"
+          style={{ padding: "0 8px 0 22px" }}
+        >
+          <span>Let’s Work Together</span>
+          <span aria-hidden className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[15px] text-petrol">→</span>
         </TransitionLink>
 
         <button
-          type="button" aria-expanded={open} aria-controls="site-menu" onClick={() => setOpen((o) => !o)}
-          className="pointer-events-auto relative flex cursor-pointer items-center gap-3.5 border-0 bg-transparent p-0 font-[inherit] text-[11px] font-medium uppercase tracking-[.14em] text-petrol min-[900px]:hidden"
+          type="button" aria-expanded={open} aria-controls="site-menu" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen((o) => !o)}
+          className="glass-pill pointer-events-auto relative z-[70] flex h-12 w-12 cursor-pointer items-center justify-center rounded-full p-0 text-petrol min-[900px]:hidden"
         >
-          {open ? "Close" : "Menu"}
-          <span aria-hidden className="grid gap-1">
-            <i className={`block h-[1.5px] w-[22px] bg-petrol transition-transform duration-500 ${open ? "translate-y-[5.5px] rotate-45" : ""}`} />
-            <i className={`block h-[1.5px] w-[22px] bg-petrol transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
-            <i className={`block h-[1.5px] w-[22px] bg-petrol transition-transform duration-500 ${open ? "-translate-y-[5.5px] -rotate-45" : ""}`} />
-          </span>
+          <span aria-hidden className={`burger ${open ? "is-open" : ""}`}><i /><i /><i /></span>
         </button>
       </header>
 
-      <div id="site-menu" ref={menu} style={{ visibility: "hidden" }} className="fixed inset-0 z-[55] flex flex-col justify-center bg-white px-[3vw] min-[900px]:hidden">
+      <div id="site-menu" ref={menu} style={{ visibility: "hidden" }} className="fixed inset-0 z-[55] flex flex-col justify-center bg-white px-[6vw] min-[900px]:hidden">
         <ul className="m-0 grid list-none gap-2 p-0">
-          {[...LINKS, ["Contact", "/contact"] as const].map(([label, href], i) => (
+          {LINKS.map(([label, href], i) => (
             <li key={href} className="overflow-hidden">
               <div data-mi>
                 <TransitionLink href={href} onClick={() => setOpen(false)} className="flex items-baseline gap-4 font-display text-[clamp(44px,13vw,96px)] font-semibold leading-[1] tracking-[-.03em] !text-petrol no-underline">
@@ -128,6 +100,10 @@ export default function Header() {
             </li>
           ))}
         </ul>
+        <TransitionLink href="/contact" onClick={() => setOpen(false)} className="mt-10 inline-flex h-12 w-fit items-center gap-3.5 rounded-full bg-petrol !text-white no-underline" style={{ padding: "0 8px 0 22px" }}>
+          Let’s Work Together
+          <span aria-hidden className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-petrol">→</span>
+        </TransitionLink>
       </div>
     </>
   );

@@ -9,7 +9,7 @@ import TransitionLink from "./TransitionLink";
 const facts = [
   ["Approach", "Build structured systems that improve execution speed, communication flow and delivery consistency."],
   ["Core", "Operations, influencer marketing and partnerships, campaign execution, social media and AI video content."],
-  ["Background", "Protonlabs (UK), Monosend Tech (South Africa), Bolanle’s Closet (UK). B.Sc. Zoology, Olabisi Onabanjo University."],
+  ["Background", "Protonlabs (UK), Monosend Tech (South Africa), Bolanle’s Closet (UK), Dermérah Aesthetics & Co. B.Sc. Zoology, Olabisi Onabanjo University."],
 ];
 
 export default function About() {

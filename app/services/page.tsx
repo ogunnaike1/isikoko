@@ -49,6 +49,7 @@ export default function ServicesPage() {
                 <h2 data-fx="words" className="mb-5 mt-3 font-display font-semibold" style={{ fontSize: "clamp(32px,4.6vw,76px)", lineHeight: 0.98, letterSpacing: "-.025em" }}>{s.name}</h2>
                 <div data-fx="line" className="mb-6 h-px bg-mist-line" />
                 <p data-fx="rise" className="m-0 mb-7 max-w-[480px] font-sans text-ink-2" style={{ fontSize: "clamp(15px,1.2vw,18px)", lineHeight: 1.6 }}>{s.desc}</p>
+                {s.desc2 && <p data-fx="rise" className="m-0 mb-7 -mt-4 max-w-[480px] font-sans text-ink-2" style={{ fontSize: "clamp(15px,1.2vw,18px)", lineHeight: 1.6 }}>{s.desc2}</p>}
                 <div data-fx="stagger" className="flex flex-wrap gap-2">
                   {s.tags.map((t) => <span key={t} data-item className="rounded-full border border-mist-line px-3.5 py-[7px] font-sans text-xs font-medium text-petrol transition-colors hover:border-teal hover:bg-teal hover:text-white">{t}</span>)}
                 </div>

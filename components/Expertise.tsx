@@ -93,7 +93,7 @@ export default function Expertise() {
               <div key={s.n} data-sblock className="flex flex-col justify-center gap-4" style={{ minHeight: "52vh", padding: "5vh 0" }}>
                 <span className="font-sans text-xs font-medium tracking-[.14em] text-teal">{s.n}</span>
                 <div data-sname className="font-display font-semibold" style={{ fontSize: "clamp(32px,4.6vw,76px)", lineHeight: 0.98, letterSpacing: "-.025em", color: "#bccac7" }}>{s.name}</div>
-                <p data-sdesc className="m-0 max-w-[480px] text-base leading-relaxed text-ink-2" style={{ opacity: 0.45 }}>{s.desc}</p>
+                <p data-sdesc className="m-0 max-w-[480px] text-base leading-relaxed text-ink-2" style={{ opacity: 0.45 }}>{s.desc}{s.desc2 && <><br /><br />{s.desc2}</>}</p>
                 <div className="flex flex-wrap gap-2">
                   {s.tags.map((t) => (
                     <span key={t} className="rounded-full border border-mist-line px-3.5 py-[7px] font-sans text-xs font-medium text-petrol transition-colors hover:border-teal hover:bg-teal hover:text-white">{t}</span>

@@ -3,7 +3,7 @@
 export const workPage = {
   eyebrow: "Portfolio",
   lines: ["Selected", "work"],
-  intro: "Operations, influencer, social and video work for Protonlabs, Monosend and Bolanle’s Closet. Filter by discipline, open a project for the full story.",
+  intro: "Operations, influencer, social and video work for Protonlabs, Monosend, Bolanle’s Closet and Dermérah Aesthetics & Co. Filter by discipline, open a project for the full story.",
 };
 
 export const servicesPage = {
@@ -31,7 +31,7 @@ export const aboutPage = {
   facts: [
     ["Approach", "Build structured systems that improve execution speed, communication flow and delivery consistency."],
     ["Core", "Operations, influencer marketing and partnerships, campaign execution, social media and AI video content."],
-    ["Background", "Protonlabs (UK), Monosend Tech (South Africa), Bolanle’s Closet (UK). B.Sc. Zoology, Olabisi Onabanjo University."],
+    ["Background", "Protonlabs (UK), Monosend Tech (South Africa), Bolanle’s Closet (UK), Dermérah Aesthetics & Co. B.Sc. Zoology, Olabisi Onabanjo University."],
   ] as [string, string][],
   workflow: [
     ["Plan", "Understand the brand goal and map timelines and content around it."],
